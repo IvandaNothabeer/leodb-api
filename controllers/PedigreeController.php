@@ -5,6 +5,11 @@ namespace app\controllers;
 use yii\rest\ActiveController;
 use yii\filters\auth\HttpBasicAuth;
 use yii\filters\AccessControl;
+use yii\data\ActiveDataFilter;
+use yii\data\ActiveDataProvider;
+use App\Models\Pedigree;
+use app\models\PedigreeSearch;
+use Yii;
 
 class PedigreeController extends ActiveController
 {
@@ -38,5 +43,40 @@ class PedigreeController extends ActiveController
 		return $behaviors;
 	}
 
+	public function actions()
+	{
+		$actions = parent::actions();
+		$actions['index']['prepareDataProvider'] = [$this, 'prepareDataProvider'];
+		return $actions;
+	}
 
+	public function prepareDataProvider()
+	{
+		DebugBreak();
+		$filter = new ActiveDataFilter([
+			'searchModel' => 'app\models\PedigreeSearch'
+		]);
+
+		$filterCondition = null;
+
+		// You may load filters from any source. For example,
+		// if you prefer JSON in request body,
+		// use Yii::$app->request->getBodyParams() below:
+		if ($filter->load(\Yii::$app->request->get())) { 
+			$filterCondition = $filter->build();
+			if ($filterCondition === false) {
+				// Serializer would get errors out of it
+				return $filter;
+			}
+		}
+
+		$query = Pedigree::find();
+		if ($filterCondition !== null) {
+			$query->andWhere($filterCondition);
+		}
+
+		return new ActiveDataProvider([
+			'query' => $query,
+		]);
+	}
 }
