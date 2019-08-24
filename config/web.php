@@ -52,7 +52,7 @@ $config = [
 			//'enableStrictParsing' => true,
 			'showScriptName' => false,
 			'rules' => [
-				['class' => 'yii\rest\UrlRule', 'controller' => 'pedigree'],
+				['class' => 'yii\rest\UrlRule', 'controller' => 'v1/pedigree'],
 			],
 		],
 

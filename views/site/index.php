@@ -37,9 +37,9 @@ $this->title = 'Leonberger Database API';
                 <h2>I need to use this !</h2>
 
                 <p>Sweet.<br>
-                   You're in the right place. Click here to get an access code</p>
+                   You're in the right place. Click here to see the supported functions and get access to the API</p>
 
-                <p><a class="btn btn-default" href="http://leodb-api.local/site/contact">Getting Access &raquo;</a></p>
+                <p><a class="btn btn-default" href="/site/about">Getting Access &raquo;</a></p>
             </div>
         </div>
 
