@@ -7,7 +7,7 @@ use yii\filters\auth\HttpBasicAuth;
 use yii\filters\AccessControl;
 use yii\data\ActiveDataFilter;
 use yii\data\ActiveDataProvider;
-use App\Models\Pedigree;
+use app\models\Pedigree;
 use app\models\PedigreeSearch;
 use Yii;
 
@@ -52,7 +52,6 @@ class PedigreeController extends ActiveController
 
 	public function prepareDataProvider()
 	{
-		DebugBreak();
 		$filter = new ActiveDataFilter([
 			'searchModel' => 'app\models\PedigreeSearch'
 		]);
