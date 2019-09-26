@@ -2,6 +2,6 @@
 
 return [
     'adminEmail' => 'ahakroon1@gmail.com',
-    'senderEmail' => 'noreply@leonberger-database.com',
+    'senderEmail' => 'ben.kroon@leonberger-database.com',
     'senderName' => 'Leonberger API mailer',
 ];
