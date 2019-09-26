@@ -36,6 +36,11 @@ use Yii;
  * @property string $Thyroid
  * @property string $DThyroid
  * @property string $WebOwner
+ * @property string $Lemp
+ * @property string $LempID
+ * @property string $Born_year
+ * @property string $MK_number
+ * @property string $MK_color
  */
 class Pedigree extends \yii\db\ActiveRecord
 {
@@ -57,7 +62,7 @@ class Pedigree extends \yii\db\ActiveRecord
             [['DOB', 'DET', 'DThyroid'], 'safe'],
             [['Name', 'RegNo', 'Coi10gen', 'AdRegNo', 'Lpn1', 'CountryBorn', 'CountryStay', 'KennelName', 'Thyroid'], 'string', 'max' => 64],
             [['Sex'], 'string', 'max' => 10],
-            [['Coiall', 'Hd', 'Ed', 'Lpn1ID', 'Lpnnw', 'Lpn2', 'Lpn2ID', 'Dna', 'TatooMicro'], 'string', 'max' => 32],
+            [['Coiall', 'Hd', 'Ed', 'Lpn1ID', 'Lpnnw', 'Lpn2', 'Lpn2ID', 'Dna', 'TatooMicro', 'Lemp', 'LempID', 'Born_year', 'MK_number', 'MK_color'], 'string', 'max' => 32],
             [['Hyperlink', 'WebOwner'], 'string', 'max' => 256],
             [['Photo', 'Eye'], 'string', 'max' => 128],
         ];
@@ -98,6 +103,11 @@ class Pedigree extends \yii\db\ActiveRecord
             'Thyroid' => 'Thyroid',
             'DThyroid' => 'D Thyroid',
             'WebOwner' => 'Web Owner',
+            'Lemp' => 'Lemp',
+            'LempID' => 'Lemp ID',
+            'Born_year' => 'Born Year',
+            'MK_number' => 'Mk Number',
+            'MK_color' => 'Mk Color',
         ];
     }
 }
