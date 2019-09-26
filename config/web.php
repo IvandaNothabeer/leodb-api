@@ -42,8 +42,8 @@ $config = [
                 'host' => 'server30.hosting2go.nl',
                 'username' => 'ben.kroon@leonberger-database.com',
                 'password' => '',
-                'port' => '25',
-                'encryption' => 'ssl',
+                'port' => '587',
+                'encryption' => 'tls',
             ],
 
         ],
